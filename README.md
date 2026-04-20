@@ -31,23 +31,34 @@ _**No browser. No server. No Python. No pip. No modules. Just Bash.**_
 </div>
 
 ---
+## The Mahout's Mandala ☸️
 
-## The Mahout's Mandala ☸
-
-- **[⚡ What is ANKUSHA?](#what-is-ankusha-)** — Summon the dashboard without the curse of dependencies.
-- **[📸 Glimpses of the Goad in Action](#glimpses-of-the-goad-in-action-)** — See the Classic Form and Modern Visage.
-- **[✨ The Goad's Arsenal](#the-goads-arsenal-features-at-a-glance-)** — A quick summary of the Goad's powers.
-- **[🎯 The Three Sacred Purposes](#why-ankusha-exists-the-three-sacred-purposes-)** — Why this goad was forged in pure Bash.
-- **[📜 The Sacred Scrolls (Requirements)](#the-sacred-scrolls-requirements-)** — The ancient spirits that must be present.
-- **[🚀 Summoning the Goad](#summoning-the-goad-)** — The ritual to bring ANKUSHA to life.
-- **[📖 The Mahout's Command Scroll](#the-mahouts-command-scroll-)** — The incantations to guide the Goad.
-- **[⚙ Engraving the Goad](#engraving-the-goad-the-mahouts-personal-mark-%EF%B8%8F)** — Adding your personal mark to the tool.
-- **[🛡 The Kavacha (Armor)](#the-kavacha-armor-security-architecture-%EF%B8%8F)** — A security posture as impenetrable as divine mail.
-- **[📊 The Vedic Mathematics of O(1) Silence](#the-vedic-mathematics-of-o1-silence-)** — How discipline spares the controller from the "Thundering Herd."
-- **[🎨 The Avatar Selection](#the-avatar-selection-v1-mythical-vs-v2-modern-)** — Choosing between the Classic Mythical Form and the Modern Visage.
-- **[🐘 The Birth of the Goad](#the-origin-story-the-churning-of-the-silicon-ocean-)** — How three alchemists forged a tool for a Nation's Peak.
-- **[🤝 The Dharma of the Forge](#the-dharma-of-the-forge-contributing-)** — The sacred rules for those who wish to sharpen the blade.
-- **[⚖ The Mahout's Pact](#the-mahouts-pact-license-)** — The universal law governing the Goad.
+<table>
+  <tr>
+    <td valign="center" width="300">
+      <img src="ankusha.png" width="280" alt="The Divine Ankusha" />
+    </td>
+    <td valign="top">
+      <br>
+      <ul>
+        <li><b><a href="#what-is-ankusha-">⚡ What is ANKUSHA?</a></b> — Summon the dashboard without the curse of dependencies.</li>
+        <li><b><a href="#glimpses-of-the-goad-in-action-">📸 Glimpses of the Goad in Action</a></b> — See the Classic Form and Modern Visage.</li>
+        <li><b><a href="#the-goads-arsenal-features-at-a-glance-">✨ The Goad's Arsenal</a></b> — A quick summary of the Goad's powers.</li>
+        <li><b><a href="#why-ankusha-exists-the-three-sacred-purposes-">🎯 The Three Sacred Purposes</a></b> — Why this goad was forged in pure Bash.</li>
+        <li><b><a href="#the-sacred-scrolls-requirements-">📜 The Sacred Scrolls (Requirements)</a></b> — The ancient spirits that must be present.</li>
+        <li><b><a href="#summoning-the-goad-">🚀 Summoning the Goad</a></b> — The ritual to bring ANKUSHA to life.</li>
+        <li><b><a href="#the-mahouts-command-scroll-">📖 The Mahout's Command Scroll</a></b> — The incantations to guide the Goad.</li>
+        <li><b><a href="#engraving-the-goad-the-mahouts-personal-mark-️">⚙ Engraving the Goad</a></b> — Adding your personal mark to the tool.</li>
+        <li><b><a href="#the-kavacha-armor-security-architecture-️">🛡 The Kavacha (Armor)</a></b> — A security posture as impenetrable as divine mail.</li>
+        <li><b><a href="#the-vedic-mathematics-of-o1-silence-">📊 The Vedic Mathematics of O(1) Silence</a></b> — How discipline spares the controller from the "Thundering Herd."</li>
+        <li><b><a href="#the-avatar-selection-v1-mythical-vs-v2-modern-">🎨 The Avatar Selection</a></b> — Choosing between the Classic Mythical Form and the Modern Visage.</li>
+        <li><b><a href="#the-origin-story-the-churning-of-the-silicon-ocean-">🐘 The Birth of the Goad</a></b> — How three alchemists forged a tool for a Nation's Peak.</li>
+        <li><b><a href="#the-dharma-of-the-forge-contributing-">🤝 The Dharma of the Forge</a></b> — The sacred rules for those who wish to sharpen the blade.</li>
+        <li><b><a href="#the-mahouts-pact-license-">⚖ The Mahout's Pact</a></b> — The universal law governing the Goad.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
 
