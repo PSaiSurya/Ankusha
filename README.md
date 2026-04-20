@@ -294,17 +294,18 @@ exiting. No ghost processes. No hidden cursor. No corrupted terminal state.
 
 ```bash
 # Read every line of the scripture before use
-cat ankusha.sh | less
+cat ankusha-v1.sh | less
 
 # Find every eval in the codebase (there is one)
-grep -n 'eval' ankusha.sh
+grep -n 'eval' ankusha-v1.sh
 
 # Confirm zero calls to the outside world
-grep -n 'curl\|wget\|nc\|ncat\|/dev/tcp' ankusha.sh
+grep -n 'curl\|wget\|nc\|ncat\|/dev/tcp' ankusha-v1.sh
 
 # Let the static analysis sage inspect its purity
-shellcheck ankusha.sh
+shellcheck ankusha-v1.sh
 ```
+Verify the integrity of the manifestation by comparing the scripts against the SHA256SUMS provided in the [latest](https://github.com/PSaiSurya/Ankusha/releases/latest) release.
 
 ---
 
