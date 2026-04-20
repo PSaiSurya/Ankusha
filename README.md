@@ -56,6 +56,7 @@ _**No browser. No server. No Python. No pip. No modules. Just Bash.**_
         <li><b><a href="#the-dharma-of-the-forge-contributing-">🤝 The Dharma of the Forge</a></b> — The sacred rules for those who wish to sharpen the blade.</li>
         <li><b><a href="#the-mahouts-pact-license-">⚖ The Mahout's Pact</a></b> — The universal law governing the Goad.</li>
       </ul>
+       <br>
     </td>
   </tr>
 </table>
