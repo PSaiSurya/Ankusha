@@ -22,6 +22,8 @@
 
 A zero-dependency, terminal-native HPC manifestation.
 
+Designed to tame any mammoth in the world at **O(1)** Silence.
+
 _No browser. No server. No Python. No pip. No modules. Just Bash._
 
 </div>
