@@ -12,7 +12,7 @@
 ### _The Goad of the Great White Elephant._
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Shell](https://img.shields.io/badge/Shell-Bash%204%2B-blue?style=for-the-badge&logo=gnubash&logoColor=white)](#-the-sacred-scrolls-requirements)
+[![Shell](https://img.shields.io/badge/Shell-Bash%204%2B-blue?style=for-the-badge&logo=gnubash&logoColor=white)](#the-sacred-scrolls-requirements)
 [![Scheduler](https://img.shields.io/badge/Scheduler-Slurm-orange?style=for-the-badge)](https://slurm.schedmd.com/)
 [![Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen?style=for-the-badge)](#1-to-banish-the-curse-of-dependencies)
 [![Supply Chain Risk](https://img.shields.io/badge/Supply--Chain%20Risk-None-red?style=for-the-badge&logo=shield)](#2-to-uphold-the-sanctity-of-trust)
@@ -32,18 +32,18 @@ _No browser. No server. No Python. No pip. No modules. Just Bash._
 
 - **[⚡ What is ANKUSHA?](#what-is-ankusha)** — Summon the dashboard without the curse of dependencies.
 - **[📸 Glimpses of the Goad in Action](#glimpses-of-the-goad-in-action)** — See the Classic Form and Modern Visage.
-- **[✨ The Goad's Arsenal](#-the-goads-arsenal-features-at-a-glance)** — A quick summary of the Goad's powers.
-- **[🎯 The Three Sacred Purposes](#-why-ankusha-exists-the-three-sacred-purposes)** — Why this goad was forged in pure Bash.
-- **[📜 The Sacred Scrolls (Requirements)](#-the-sacred-scrolls-requirements)** — The ancient spirits that must be present.
-- **[🚀 Summoning the Goad](#-summoning-the-goad)** — The ritual to bring ANKUSHA to life.
-- **[📖 The Mahout's Command Scroll](#-the-mahouts-command-scroll)** — The incantations to guide the Goad.
-- **[⚙ Engraving the Goad](#-engraving-the-goad-the-mahouts-personal-mark)** — Adding your personal mark to the tool.
-- **[🛡 The Kavacha (Armor)](#-the-kavacha-armor-security-architecture)** — A security posture as impenetrable as divine mail.
-- **[📊 The Vedic Mathematics of O(1) Silence](#-the-vedic-mathematics-of-o1-silence)** — How discipline spares the controller from the "Thundering Herd."
-- **[🎨 The Avatar Selection](#-v1-classic-vs-v2-modern)** — Choosing between the Classic Form and the Modern Visage.
-- **[🐘 The Birth of the Goad](#-the-origin-story-the-churning-of-the-silicon-ocean)** — How three alchemists forged a tool for a Nation's Peak.
-- **[🤝 The Dharma of the Forge](#-the-dharma-of-the-forge-contributing)** — The sacred rules for those who wish to sharpen the blade.
-- **[⚖ The Mahout's Pact](#-the-mahouts-pact-license)** — The universal law governing the Goad.
+- **[✨ The Goad's Arsenal](#the-goads-arsenal-features-at-a-glance)** — A quick summary of the Goad's powers.
+- **[🎯 The Three Sacred Purposes](#why-ankusha-exists-the-three-sacred-purposes)** — Why this goad was forged in pure Bash.
+- **[📜 The Sacred Scrolls (Requirements)](#the-sacred-scrolls-requirements)** — The ancient spirits that must be present.
+- **[🚀 Summoning the Goad](#summoning-the-goad)** — The ritual to bring ANKUSHA to life.
+- **[📖 The Mahout's Command Scroll](#the-mahouts-command-scroll)** — The incantations to guide the Goad.
+- **[⚙ Engraving the Goad](#engraving-the-goad-the-mahouts-personal-mark)** — Adding your personal mark to the tool.
+- **[🛡 The Kavacha (Armor)](#the-kavacha-armor-security-architecture)** — A security posture as impenetrable as divine mail.
+- **[📊 The Vedic Mathematics of O(1) Silence](#the-vedic-mathematics-of-o1-silence)** — How discipline spares the controller from the "Thundering Herd."
+- **[🎨 The Avatar Selection](#the-avatar-selection-v1-classic-vs-v2-modern)** — Choosing between the Classic Form and the Modern Visage.
+- **[🐘 The Birth of the Goad](#the-origin-story-the-churning-of-the-silicon-ocean)** — How three alchemists forged a tool for a Nation's Peak.
+- **[🤝 The Dharma of the Forge](#the-dharma-of-the-forge-contributing)** — The sacred rules for those who wish to sharpen the blade.
+- **[⚖ The Mahout's Pact](#the-mahouts-pact-license)** — The universal law governing the Goad.
 
 ---
 
@@ -95,21 +95,21 @@ ANKUSHA The Goad of the Great White Elephant. v2.0
 
 ## The Goad's Arsenal (Features at a Glance) ✨
 
-| Icon | Feature               | Detail                                                     |
-| :--: | :-------------------- | :--------------------------------------------------------- |
-|  🖥  | **Node Overview**     | Per-node CPU, RAM, GPU—colour-coded progress bars          |
-|  🧠  | **Live Memory**       | RAM from Slurm `RealMemory`—never hardcoded                |
-|  📋  | **Active Jobs**       | Running and pending with full resource breakdown           |
-|  🕑  | **Job History**       | Last 5 completed jobs via `sacct`, from the last 7 days    |
-|  🔢  | **Queue & Priority**  | Pending queue with `sprio` scores, colour-coded            |
-|  ⚡  | **Snapshot Default**  | Renders once and exits—safe for scripting and `cron`       |
-|  🔄  | **Interactive Mode**  | Live refresh with configurable interval (`-i [SECS]`)      |
-|  🌍  | **Timezone Aware**    | `--tz` flag; IST by default; label auto-detected           |
-|  🛡  | **10 Fixed Calls**    | Constant Slurm load regardless of cluster size             |
-|  ⚠   | **Refresh Guard**     | Warns and requires `[y/N]` for intervals < 30s             |
-|  🔒  | **Signal Safe**       | Top-level trap; cursor restored and sleep reaped on Ctrl+C |
-|  🎨  | **Two Visual Styles** | Classic ASCII (v1) and Unicode box-drawing (v2)            |
-|  📦  | **Zero Dependencies** | Pure Bash + Slurm CLI tools already on your system         |
+| Icon | Feature               | Detail                                                       |
+| :--: | :-------------------- | :----------------------------------------------------------- |
+| 🖥   | **Node Overview**     | Per-node CPU, RAM, GPU—colour-coded progress bars            |
+| 🧠   | **Live Memory**       | RAM from Slurm `RealMemory`—never hardcoded                  |
+| 📋   | **Active Jobs**       | Running and pending with full resource breakdown             |
+| 🕑   | **Job History**       | Last 5 completed jobs via `sacct`, from the last 7 days      |
+| 🔢   | **Queue & Priority**  | Pending queue with `sprio` scores, colour-coded              |
+| ⚡   | **Snapshot Default**  | Renders once and exits—safe for scripting and `cron`         |
+| 🔄   | **Interactive Mode**  | Live refresh with configurable interval (`-i [SECS]`)        |
+| 🌍   | **Timezone Aware**    | `--tz` flag; IST by default; label auto-detected             |
+| 🛡   | **10 Fixed Calls**    | Constant Slurm load regardless of cluster size               |
+| ⚠   | **Refresh Guard**     | Warns and requires `[y/N]` for intervals < 30s               |
+| 🔒   | **Signal Safe**       | Top-level trap; cursor restored and sleep reaped on Ctrl+C   |
+| 🎨   | **Two Visual Styles** | Classic ASCII (v1) and Unicode box-drawing (v2)              |
+| 📦   | **Zero Dependencies** | Pure Bash + Slurm CLI tools already on your system           |
 
 ---
 
@@ -153,14 +153,14 @@ cluster size.
 
 ## The Sacred Scrolls (Requirements) 📜
 
-| Tool                 | Purpose                       |  Required?  |
-| :------------------- | :---------------------------- | :---------: |
-| `bash` ≥ 4.0         | The language of the Goad      |     ✅      |
-| `sinfo`, `squeue`    | Whispers to the scheduler     |     ✅      |
-| `scontrol`           | Deeper inquiries to the nodes |     ✅      |
-| `tput`               | The art of colour and light   |     ✅      |
-| `awk`, `grep`, `sed` | The sacred text-carving tools |     ✅      |
-| `sacct`, `sprio`     | Sages of history and destiny  | ⚪ Optional |
+| Tool               | Purpose                        | Required?    |
+| :----------------- | :----------------------------- | :----------: |
+| `bash` ≥ 4.0       | The language of the Goad       | ✅           |
+| `sinfo`, `squeue`  | Whispers to the scheduler      | ✅           |
+| `scontrol`         | Deeper inquiries to the nodes  | ✅           |
+| `tput`             | The art of colour and light    | ✅           |
+| `awk`, `grep`, `sed` | The sacred text-carving tools | ✅           |
+| `sacct`, `sprio`   | Sages of history and destiny   | ⚪ Optional  |
 
 Fear not, Mahout. This is not a list of demands. These sacred tools are the ancient
 spirits that already dwell within any Slurm-powered realm. We list them merely for the
@@ -244,11 +244,11 @@ forged from principles of absolute minimalism.
 
 ### Zero Attack Surface
 
-| Attack Surface                            | Status   |
-| :---------------------------------------- | :------- |
-| External packages (`pip`, `npm`, `cargo`) | ❌ None  |
-| Compiled or binary components             | ❌ None  |
-| Network connections at runtime            | ❌ None  |
+| Attack Surface                             | Status   |
+| :----------------------------------------- | :------- |
+| External packages (`pip`, `npm`, `cargo`)  | ❌ None  |
+| Compiled or binary components              | ❌ None  |
+| Network connections at runtime             | ❌ None  |
 | Write operations to the filesystem        | ❌ None  |
 | Root or elevated privileges               | ❌ Never |
 | Hardcoded credentials or tokens           | ❌ None  |
@@ -300,19 +300,19 @@ shellcheck ankusha.sh
 Every single render — snapshot or interactive frame — makes exactly the following Slurm
 calls. This count is fixed. It does not grow with cluster size.
 
-| Section                    | Slurm Tool | Purpose                                   | Calls  |
-| :------------------------- | :--------- | :---------------------------------------- | :----: |
-| `load_node_cache`          | `sinfo`    | Get node list for partition               |   1    |
-| `load_node_cache`          | `scontrol` | Bulk-fetch all node metrics in one RPC    |   1    |
-| `draw_quick_stats`         | `sinfo`    | Count node states (idle/alloc/mix/down)   |   1    |
-| `draw_quick_stats`         | `squeue`   | Count running jobs                        |   1    |
-| `draw_quick_stats`         | `squeue`   | Count pending jobs                        |   1    |
-| `draw_nodes_section`       | `sinfo`    | Stream node list with state for rendering |   1    |
-| `draw_jobs_section`        | `squeue`   | Fetch all active jobs in one call         |   1    |
-| `draw_recent_jobs_section` | `sacct`    | Fetch last 7 days of completed jobs       |   1    |
-| `draw_queue_section`       | `squeue`   | Fetch all pending jobs in one call        |   1    |
-| `draw_queue_section`       | `sprio`    | Fetch priority scores for pending jobs    |   1    |
-| **Total**                  |            |                                           | **10** |
+| Section | Slurm Tool | Purpose | Calls |
+| :-------------------------- | :---------- | :---------------------------------------------- | :---: |
+| `load_node_cache` | `sinfo` | Get node list for partition | 1 |
+| `load_node_cache` | `scontrol` | Bulk-fetch all node metrics in one RPC | 1 |
+| `draw_quick_stats` | `sinfo` | Count node states (idle/alloc/mix/down) | 1 |
+| `draw_quick_stats` | `squeue` | Count running jobs | 1 |
+| `draw_quick_stats` | `squeue` | Count pending jobs | 1 |
+| `draw_nodes_section` | `sinfo` | Stream node list with state for rendering | 1 |
+| `draw_jobs_section` | `squeue` | Fetch all active jobs in one call | 1 |
+| `draw_recent_jobs_section` | `sacct` | Fetch last 7 days of completed jobs | 1 |
+| `draw_queue_section` | `squeue` | Fetch all pending jobs in one call | 1 |
+| `draw_queue_section` | `sprio` | Fetch priority scores for pending jobs | 1 |
+| **Total** | | | **10** |
 
 > GPU totals in `draw_quick_stats` are computed directly from `NODE_CACHE` (already in
 > memory from `load_node_cache`) — no additional Slurm call required.
@@ -325,12 +325,12 @@ calls. This count is fixed. It does not grow with cluster size.
 
 ### Karmic Relief: The Impact of O(1) Discipline
 
-| Cluster Magnitude | The Naive Clamour  | The ANKUSHA Silence | Scheduler Relief |
-| :---------------- | :----------------: | :-----------------: | :--------------: |
-| **10 Nodes**      |  34 calls/render   | **10 calls/render** |   71% Quieter    |
-| **50 Nodes**      |  114 calls/render  | **10 calls/render** |   91% Quieter    |
-| **100 Nodes**     |  214 calls/render  | **10 calls/render** |   95% Quieter    |
-| **512 Nodes**     | 1,038 calls/render | **10 calls/render** |  99.0% Quieter   |
+| Cluster Magnitude | The Naive Clamour  | The ANKUSHA Silence  | Scheduler Relief |
+| :---------------- | :----------------: | :------------------: | :--------------: |
+| **10 Nodes**      | 34 calls/render    | **10 calls/render**  | 71% Quieter      |
+| **50 Nodes**      | 114 calls/render   | **10 calls/render**  | 91% Quieter      |
+| **100 Nodes**     | 214 calls/render   | **10 calls/render**  | 95% Quieter      |
+| **512 Nodes**     | 1,038 calls/render | **10 calls/render**  | 99.0% Quieter    |
 
 _Audit basis: static analysis of `ankusha.sh` source. Naive baseline = `14 + 2N`
 calls (one `squeue` per node for state, one `sinfo` per node for metrics). ANKUSHA
@@ -343,13 +343,13 @@ baseline = 10 fixed calls regardless of N. Relief = `(naive − 10) / naive × 1
 A Mahout must choose the form of their Goad. Both Avatars share the same soul and
 identical logic.
 
-|                          | `ankusha.sh` — v1 Classic         | `ankusha2.sh` — v2 Modern         |
-| :----------------------- | :-------------------------------- | :-------------------------------- |
-| **Progress bars**        | `####....` ASCII fill             | `▓▓▓░░░` Unicode block elements   |
-| **Section borders**      | `────────` separator lines        | `┌────┐` box-drawing frames       |
-| **Best for**             | PuTTY, TTY, xterm, MobaXterm      | iTerm2, Windows Terminal, Kitty   |
-| **Slurm Call Count**     | **10 per render**                 | **10 per render**                 |
-| **Signal Safety**        | Top-level trap, sleep tracked     | Top-level trap, sleep tracked     |
+|                        | `ankusha.sh` — v1 Classic      | `ankusha2.sh` — v2 Modern        |
+| :--------------------- | :----------------------------- | :------------------------------- |
+| **Progress bars**      | `####....` ASCII fill          | `▓▓▓░░░` Unicode block elements  |
+| **Section borders**    | `────────` separator lines     | `┌────┐` box-drawing frames      |
+| **Best for**           | PuTTY, TTY, xterm, MobaXterm  | iTerm2, Windows Terminal, Kitty  |
+| **Slurm Call Count**   | **10 per render**              | **10 per render**                |
+| **Signal Safety**      | Top-level trap, sleep tracked  | Top-level trap, sleep tracked    |
 | **Partition Validation** | `scontrol ping` + partition check | `scontrol ping` + partition check |
 
 ---
