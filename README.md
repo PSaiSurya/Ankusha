@@ -41,10 +41,10 @@ _**No browser. No server. No Python. No pip. No modules. Just Bash.**_
 - **[📜 The Sacred Scrolls (Requirements)](#the-sacred-scrolls-requirements-)** — The ancient spirits that must be present.
 - **[🚀 Summoning the Goad](#summoning-the-goad-)** — The ritual to bring ANKUSHA to life.
 - **[📖 The Mahout's Command Scroll](#the-mahouts-command-scroll-)** — The incantations to guide the Goad.
-- **[⚙ Engraving the Goad](#engraving-the-goad-the-mahouts-personal-mark-)** — Adding your personal mark to the tool.
-- **[🛡 The Kavacha (Armor)](#the-kavacha-armor-security-architecture-)** — A security posture as impenetrable as divine mail.
+- **[⚙ Engraving the Goad](#engraving-the-goad-the-mahouts-personal-mark-%EF%B8%8F)** — Adding your personal mark to the tool.
+- **[🛡 The Kavacha (Armor)](#the-kavacha-armor-security-architecture-%EF%B8%8F)** — A security posture as impenetrable as divine mail.
 - **[📊 The Vedic Mathematics of O(1) Silence](#the-vedic-mathematics-of-o1-silence-)** — How discipline spares the controller from the "Thundering Herd."
-- **[🎨 The Avatar Selection](#the-avatar-selection-v1-classic-vs-v2-modern-)** — Choosing between the Classic Form and the Modern Visage.
+- **[🎨 The Avatar Selection](#the-avatar-selection-v1-mythical-vs-v2-modern-)** — Choosing between the Classic Mythical Form and the Modern Visage.
 - **[🐘 The Birth of the Goad](#the-origin-story-the-churning-of-the-silicon-ocean-)** — How three alchemists forged a tool for a Nation's Peak.
 - **[🤝 The Dharma of the Forge](#the-dharma-of-the-forge-contributing-)** — The sacred rules for those who wish to sharpen the blade.
 - **[⚖ The Mahout's Pact](#the-mahouts-pact-license-)** — The universal law governing the Goad.
@@ -63,9 +63,9 @@ It operates entirely at the **user level**—no admin rights, no daemon installa
 cluster configuration changes required. If you can whisper `squeue` to the scheduler, you
 can command ANKUSHA.
 
-* **Real-time GPU Tracking:** Monitor allocated vs. idle GPUs across your partition.
-* **Zero-Dependency:** Runs on any restricted cluster (No Python/Conda needed).
-* **Safe Monitoring:** Fixed call count ensures you never lag the `slurmctld` scheduler.
+- **Real-time GPU Tracking:** Monitor allocated vs. idle GPUs across your partition.
+- **Zero-Dependency:** Runs on any restricted cluster (No Python/Conda needed).
+- **Safe Monitoring:** Fixed call count ensures you never lag the `slurmctld` scheduler.
 
 ```text
 ANKUSHA The Goad of the Great White Elephant. v2.0
@@ -91,33 +91,43 @@ ANKUSHA The Goad of the Great White Elephant. v2.0
 
 > _Full dashboard snapshot — dark terminal, 160 columns_
 >
-> ![ANKUSHA v1 Snapshot](screenshots/v1-snapshot.png)
+> ![ANKUSHA v1 Snapshot](screenshots/v1-snapshot.jpg)
 
 ### v2 — Modern - The Modern Manifestation (Unicode Box Drawing)
 
 > _Full dashboard — `┌────┐` borders, `▓▓▓░░░` bars, pill-style overview_
 >
-> ![ANKUSHA v2 Snapshot](screenshots/v2-snapshot.png)
+> ![ANKUSHA v2 Snapshot](screenshots/v2-snapshot.jpg)
+
+### Live Monitoring in Action
+
+> _Interactive mode with 30-second refresh (default - Customizable) — showing real-time cluster changes_
+
+**v1 (Mythical) - Live/Interactive/Refresh Mode:**
+![ANKUSHA v1 Interactive](screenshots/v1-interactive.jpg)
+
+**v2 (Modern) - Live/Interactive/Refresh Mode:**
+![ANKUSHA v2 Interactive](screenshots/v2-interactive.jpg)
 
 ---
 
 ## The Goad's Arsenal (Features at a Glance) ✨
 
-| Icon | Feature               | Detail                                                       |
-| :--: | :-------------------- | :----------------------------------------------------------- |
-| 🖥   | **Node Overview**     | Per-node CPU, RAM, GPU—colour-coded progress bars            |
-| 🧠   | **Live Memory**       | RAM from Slurm `RealMemory`—never hardcoded                  |
-| 📋   | **Active Jobs**       | Running and pending with full resource breakdown             |
-| 🕑   | **Job History**       | Last 5 completed jobs via `sacct`, from the last 7 days      |
-| 🔢   | **Queue & Priority**  | Pending queue with `sprio` scores, colour-coded              |
-| ⚡   | **Snapshot Default**  | Renders once and exits—safe for scripting and `cron`         |
-| 🔄   | **Interactive Mode**  | Live refresh with configurable interval (`-i [SECS]`)        |
-| 🌍   | **Timezone Aware**    | `--tz` flag; IST by default; label auto-detected             |
-| 🛡   | **10 Fixed Calls**    | Constant Slurm load regardless of cluster size               |
-| ⚠   | **Refresh Guard**     | Warns and requires `[y/N]` for intervals < 30s               |
-| 🔒   | **Signal Safe**       | Top-level trap; cursor restored and sleep reaped on Ctrl+C   |
-| 🎨   | **Two Visual Styles** | Classic ASCII (v1) and Unicode box-drawing (v2)              |
-| 📦   | **Zero Dependencies** | Pure Bash + Slurm CLI tools already on your system           |
+| Icon | Feature               | Detail                                                     |
+| :--: | :-------------------- | :--------------------------------------------------------- |
+|  🖥  | **Node Overview**     | Per-node CPU, RAM, GPU—colour-coded progress bars          |
+|  🧠  | **Live Memory**       | RAM from Slurm `RealMemory`—never hardcoded                |
+|  📋  | **Active Jobs**       | Running and pending with full resource breakdown           |
+|  🕑  | **Job History**       | Last 5 completed jobs via `sacct`, from the last 7 days    |
+|  🔢  | **Queue & Priority**  | Pending queue with `sprio` scores, colour-coded            |
+|  ⚡  | **Snapshot Default**  | Renders once and exits—safe for scripting and `cron`       |
+|  🔄  | **Interactive Mode**  | Live refresh with configurable interval (`-i [SECS]`)      |
+|  🌍  | **Timezone Aware**    | `--tz` flag; IST by default; label auto-detected           |
+|  🛡  | **10 Fixed Calls**    | Constant Slurm load regardless of cluster size             |
+|  ⚠   | **Refresh Guard**     | Warns and requires `[y/N]` for intervals < 30s             |
+|  🔒  | **Signal Safe**       | Top-level trap; cursor restored and sleep reaped on Ctrl+C |
+|  🎨  | **Two Visual Styles** | Classic ASCII (v1) and Unicode box-drawing (v2)            |
+|  📦  | **Zero Dependencies** | Pure Bash + Slurm CLI tools already on your system         |
 
 ---
 
@@ -161,14 +171,14 @@ cluster size.
 
 ## The Sacred Scrolls (Requirements) 📜
 
-| Tool               | Purpose                        | Required?    |
-| :----------------- | :----------------------------- | :----------: |
-| `bash` ≥ 4.0       | The language of the Goad       | ✅           |
-| `sinfo`, `squeue`  | Whispers to the scheduler      | ✅           |
-| `scontrol`         | Deeper inquiries to the nodes  | ✅           |
-| `tput`             | The art of colour and light    | ✅           |
-| `awk`, `grep`, `sed` | The sacred text-carving tools | ✅           |
-| `sacct`, `sprio`   | Sages of history and destiny   | ⚪ Optional  |
+| Tool                 | Purpose                       |  Required?  |
+| :------------------- | :---------------------------- | :---------: |
+| `bash` ≥ 4.0         | The language of the Goad      |     ✅      |
+| `sinfo`, `squeue`    | Whispers to the scheduler     |     ✅      |
+| `scontrol`           | Deeper inquiries to the nodes |     ✅      |
+| `tput`               | The art of colour and light   |     ✅      |
+| `awk`, `grep`, `sed` | The sacred text-carving tools |     ✅      |
+| `sacct`, `sprio`     | Sages of history and destiny  | ⚪ Optional |
 
 Fear not, Mahout. This is not a list of demands. These sacred tools are the ancient
 spirits that already dwell within any Slurm-powered realm. We list them merely for the
@@ -189,54 +199,84 @@ cd Ankusha
 # Grant power to the manifestations
 chmod +x scripts/*.sh
 
-# Summon the Modern Visage (v2) immediately
-./scripts/ankusha-v2.sh -p your_partition
+# Choose your Avatar and summon immediately:
+./scripts/ankusha-v1.sh -p your_partition    # Classic ASCII
+./scripts/ankusha-v2.sh -p your_partition    # Modern Unicode
 
 # --- OR: Place the Goad on your sacred PATH for daily ritual ---
 
 # 1. Create your local shrine of binaries (if it doesn't exist)
 mkdir -p ~/.local/bin
 
-# 2. Copy your preferred version to the PATH
+# 2. Copy your preferred Avatar to the PATH
+# For the Classic experience:
+cp scripts/ankusha-v1.sh ~/.local/bin/ankusha
+
+# For the Modern experience:
 cp scripts/ankusha-v2.sh ~/.local/bin/ankusha
+
+# Or keep both with distinct names:
+cp scripts/ankusha-v1.sh ~/.local/bin/ankusha-classic
+cp scripts/ankusha-v2.sh ~/.local/bin/ankusha-modern
 
 # 3. Ensure the shrine is recognized by your shell
 # (Only needed once; check your ~/.bashrc if unsure)
 export PATH="$HOME/.local/bin:$PATH"
 
-# The Goad now answers to your call from any pasture.
-ankusha --help
+# The Goad now answers to your call from any pasture
+ankusha --help                    # If you chose one version
+ankusha-classic --help           # If you kept both
+ankusha-modern --help            # If you kept both
 ```
 
----
-
-## The Mahout's Command Scroll 📖
-
-The Command Scroll is your quick reference to the powerful incantations (command-line
-options) that direct ANKUSHA's gaze.
+### Quick Start Examples
 
 ```bash
-ankusha                     # Glimpse the default pasture, your own herd
-ankusha -p gpu              # Glimpse the 'gpu' pasture
-ankusha -p highmem -u alice # Observe the herd of the mahout 'alice'
-ankusha -i                  # Begin the Watchful Meditation (30s refresh)
-ankusha -i 60 -p gpu        # Meditate upon 'gpu' (60s refresh)
-ankusha -i 10               # A rapid meditation (warns, asks for intent)
-ankusha --all               # Gaze upon all pastures of the realm
-ankusha --tz UTC            # See time through the lens of the Prime Meridian
-ankusha --help              # Unfurl the full command scroll
-```
+# Snapshot of default partition
+ankusha
 
-If the runes on this scroll prove cryptic, a more detailed scripture can be summoned
-directly from the Goad with `ankusha --help`.
+# Live monitoring of GPU partition, 60-second refresh
+ankusha -i 60 -p gpu
+
+# View alice's jobs across all partitions
+ankusha --all -u alice
+
+# Monitor with custom timezone
+ankusha -i 30 --tz UTC
+```
 
 ---
 
-## Engraving the Goad: The Mahout's Personal Mark ⚙
+## The Mahout's Command Scroll 📜
 
-A Mahout knows their beast, and a master knows their tools. While ANKUSHA is forged ready
-for any cluster, you may engrave it with your own preferences. All defaults are defined
-as read-only variables at the top of the script.
+The Command Scroll is your quick reference to the powerful incantations (command-line options) that direct ANKUSHA's gaze.
+
+```bash
+ankusha                         # Glimpse the default pasture, your own herd
+ankusha -p gpu                  # Glimpse the 'gpu' pasture
+ankusha -p highmem -u alice     # Observe the herd of the mahout 'alice'
+ankusha -i                      # Begin the Watchful Meditation (30s refresh)
+ankusha -i 60 -p gpu            # Meditate upon 'gpu' (60s refresh)
+ankusha -i 10                   # A rapid meditation (warns, asks for intent)
+ankusha --all                   # Gaze upon all pastures of the realm
+ankusha --tz UTC                # See time through the lens of the Prime Meridian
+ankusha --override-mem 1TB      # When Slurm forgets the elephant's true weight
+ankusha --override-mem 512GB -p gpu  # Override memory, focus on 'gpu' pasture
+ankusha --help                  # Unfurl the full command scroll
+```
+
+> **📖 Note on Memory Override:**  
+> Some clusters report only `FreeMem` accurately while `RealMemory` may be misconfigured.  
+> Use `--override-mem` to manually set the true total memory per node.  
+> Accepts: `1TB`, `1024GB`, or raw MB values like `1048576`.
+
+If the runes on this scroll prove cryptic, a more detailed scripture can be summoned directly from the Goad with `ankusha --help`.
+
+---
+
+## Engraving the Goad: The Mahout's Personal Mark ⚙️
+
+A Mahout knows their beast, and a master knows their tools. While ANKUSHA is forged ready for any cluster, you may engrave it with your own preferences. All defaults are defined as read-only variables at the top of the script.
 
 ```bash
 # --- THE TRIMMINGS (Change these for your own amusement) ---
@@ -253,66 +293,72 @@ readonly MIN_SAFE_REFRESH=30 # ← Crossing this line summons the "Are you certa
                              #   snapshot mode in a cron job, ensure your cron interval is also
                              #   >= 30s to avoid burdening slurmctld.
 readonly DEFAULT_TZ="Asia/Kolkata" # ← Set to "UTC" or "America/New_York" for global mahouts.
+
 ```
 
 ---
 
-## The Kavacha (Armor): Security Architecture 🛡
+## The Kavacha (Armor): Security Architecture 🛡️
 
-In the theatre of computation, trust is not given; it is proven. ANKUSHA's armor is
-forged from principles of absolute minimalism.
+In the theatre of computation, trust is not given; it is proven. ANKUSHA's armor is forged from principles of absolute minimalism.
 
 ### Zero Attack Surface
 
-| Attack Surface                             | Status   |
-| :----------------------------------------- | :------- |
-| External packages (`pip`, `npm`, `cargo`)  | ❌ None  |
-| Compiled or binary components              | ❌ None  |
-| Network connections at runtime             | ❌ None  |
-| Write operations to the filesystem        | ❌ None  |
-| Root or elevated privileges               | ❌ Never |
-| Hardcoded credentials or tokens           | ❌ None  |
-| External API calls or hidden telemetry    | ❌ None  |
+| Attack Surface                         |  Status  |
+| :------------------------------------- | :------: |
+| External packages (pip, npm, cargo)    | ❌ None  |
+| Compiled or binary components          | ❌ None  |
+| Network connections at runtime         | ❌ None  |
+| Write operations to the filesystem     | ❌ None  |
+| Root or elevated privileges            | ❌ Never |
+| Hardcoded credentials or tokens        | ❌ None  |
+| External API calls or hidden telemetry | ❌ None  |
 
 ### The One `eval` — An Inspected Join
 
-A true Kavacha has no chinks. Therefore, let us inspect the one join in this armor. The
-script contains exactly one `eval`. This is a standard, safe Bash idiom for returning
-multiple values from a subshell. The `awk` program produces a fixed-format string of
-integers. The output is validated against a strict integer pattern before `eval` ever
-sees it. No user input or external data ever reaches it, making it immune to injection.
+A true Kavacha has no chinks. Therefore, let us inspect the one join in this armor. Both scripts contain exactly **one** `eval`. This is a standard, safe Bash idiom for returning multiple values from a subshell. The awk program produces a fixed-format string of integers. The output is validated against a strict integer pattern before `eval` ever sees it. No user input or external data ever reaches it, making it immune to injection.
 
 ### Signal Safety and Clean Exit
 
-The trap for `SIGINT`, `SIGTERM`, `SIGHUP`, and `EXIT` is registered at the **top level
-of the script**, before `main()` is called. This guarantees that Ctrl+C at any point in
-execution — including during argument parsing and partition validation — will always
-restore the cursor, reset terminal colours, and reap the background `sleep` child before
-exiting. No ghost processes. No hidden cursor. No corrupted terminal state.
+The trap for `SIGINT`, `SIGTERM`, `SIGHUP`, and `EXIT` is registered at the top level of both scripts, before `main()` is called. This guarantees that Ctrl+C at any point in execution — including during argument parsing and partition validation — will always restore the cursor, reset terminal colours, and reap the background sleep child before exiting. No ghost processes. No hidden cursor. No corrupted terminal state.
+
+### Fast Refresh Protection
+
+ANKUSHA includes built-in safeguards against aggressive polling that could burden the scheduler:
+
+> _Warning dialog when attempting refresh intervals below 30 seconds and/or using --all to view all partitions in interactive mode_
+
+![Fast Refresh Warning](screenshots/v1-warning.jpg)
+
+![View All Partitions Warning](screenshots/v2-warning.jpg)
+
+> Both these protection apply to both Avatar forms and requires explicit user confirmation before proceeding.
 
 ### Audit It Yourself
 
 ```bash
 # Read every line of the scripture before use
-cat ankusha-v1.sh | less
+cat ankusha-v1.sh | less       # v1 Classic / Mythical
+cat ankusha-v2.sh | less       # v2 Modern
 
-# Find every eval in the codebase (there is one)
-grep -n 'eval' ankusha-v1.sh
+# Find every eval in the codebase (there is one per script)
+grep -n 'eval' ankusha-v1.sh ankusha-v2.sh
 
 # Confirm zero calls to the outside world
-grep -n 'curl\|wget\|nc\|ncat\|/dev/tcp' ankusha-v1.sh
+grep -n 'curl\|wget\|nc\|ncat\|/dev/tcp' ankusha-v1.sh ankusha-v2.sh
 
-# Let the static analysis sage inspect its purity
-shellcheck ankusha-v1.sh
+# Let the static analysis sage inspect their purity
+shellcheck ankusha-v1.sh ankusha-v2.sh
 ```
-Verify the integrity of the manifestation by comparing the scripts against the SHA256SUMS provided in the [latest](https://github.com/PSaiSurya/Ankusha/releases/latest) release.
+
+Both Avatar forms (`ankusha-v1.sh` and `ankusha-v2.sh`) share identical security properties — only their visual presentation differs. Verify the integrity of the manifestation by comparing the scripts against the `SHA256SUMS` provided in the latest release.
 
 ---
 
 ## The Vedic Mathematics of O(1) Silence 📊
 
 > **The O(1) Principle:** While naive scripts burden the controller with a chaotic `O(N)`
-> ritual, ANKUSHA remains unshakeable. It maintains a strict **10–11-call discipline**,
+> ritual, ANKUSHA remains unshakeable. It maintains a strict **10-call discipline**,
 > ensuring the Cloud Mammoth never feels the weight of its rider—no matter how many tusks
 > (nodes) the beast possesses.
 
@@ -321,50 +367,49 @@ Verify the integrity of the manifestation by comparing the scripts against the S
 Every single render — snapshot or interactive frame — makes exactly the following Slurm
 calls. This count is fixed. It does not grow with cluster size.
 
-| Section | Slurm Tool | Purpose | Calls |
-| :-------------------------- | :---------- | :---------------------------------------------- | :---: |
-| `load_node_cache` | `sinfo` | Get node list for partition | 1 |
-| `load_node_cache` | `scontrol` | Bulk-fetch all node metrics in one RPC | 1 |
-| `draw_quick_stats` | `sinfo` | Count node states (idle/alloc/mix/down) | 1 |
-| `draw_quick_stats` | `squeue` | Count running jobs | 1 |
-| `draw_quick_stats` | `squeue` | Count pending jobs | 1 |
-| `draw_nodes_section` | `sinfo` | Stream node list with state for rendering | 1 |
-| `draw_jobs_section` | `squeue` | Fetch all active jobs in one call | 1 |
-| `draw_recent_jobs_section` | `sacct` | Fetch last 7 days of completed jobs | 1 |
-| `draw_queue_section` | `squeue` | Fetch all pending jobs in one call | 1 |
-| `draw_queue_section` | `sprio` | Fetch priority scores for pending jobs | 1 |
-| **Total** | | | **10** |
+| Section                    | Slurm Tool | Purpose                                   | Calls  |
+| :------------------------- | :--------- | :---------------------------------------- | :----: |
+| `load_node_cache`          | `sinfo`    | Get node list for partition               |   1    |
+| `load_node_cache`          | `scontrol` | Bulk-fetch all node metrics in one RPC    |   1    |
+| `draw_quick_stats`         | `sinfo`    | Count node states (idle/alloc/mix/down)   |   1    |
+| `draw_quick_stats`         | `squeue`   | Count + GPU usage for running jobs        |   1    |
+| `draw_quick_stats`         | `squeue`   | Detailed pending jobs (count derived)     |   1    |
+| `draw_nodes_section`       | `sinfo`    | Stream node list with state for rendering |   1    |
+| `draw_jobs_section`        | `squeue`   | Fetch all active jobs in one call         |   1    |
+| `draw_recent_jobs_section` | `sacct`    | Fetch last 7 days of completed jobs       |   1    |
+| `draw_queue_section`       | `sprio`    | Fetch priority scores for pending jobs    |   1    |
+| **Total**                  |            |                                           | **10** |
 
 > GPU totals in `draw_quick_stats` are computed directly from `NODE_CACHE` (already in
 > memory from `load_node_cache`) — no additional Slurm call required.
 >
-> Job counts (`pt`, `pu`) in `draw_queue_section` are derived by parsing the single
-> `squeue` result already fetched — no separate count calls.
+> Pending job data is fetched once in `draw_quick_stats` and reused in `draw_queue_section`
+> — no duplicate queries.
 >
 > `sacct` and `sprio` are optional. If unavailable, those sections degrade gracefully
 > and their calls are skipped, reducing the total to **8 calls per render**.
 
 ### Karmic Relief: The Impact of O(1) Discipline
 
-| Cluster Magnitude | The Naive Clamour  | The ANKUSHA Silence  | Scheduler Relief |
-| :---------------- | :----------------: | :------------------: | :--------------: |
-| **10 Nodes**      | 34 calls/render    | **10 calls/render**  | 71% Quieter      |
-| **50 Nodes**      | 114 calls/render   | **10 calls/render**  | 91% Quieter      |
-| **100 Nodes**     | 214 calls/render   | **10 calls/render**  | 95% Quieter      |
-| **512 Nodes**     | 1,038 calls/render | **10 calls/render**  | 99.0% Quieter    |
+| Cluster Magnitude | The Naive Clamour  | The ANKUSHA Silence | Scheduler Relief |
+| :---------------- | :----------------: | :-----------------: | :--------------: |
+| **10 Nodes**      |  34 calls/render   | **10 calls/render** |   71% Quieter    |
+| **50 Nodes**      |  114 calls/render  | **10 calls/render** |   91% Quieter    |
+| **100 Nodes**     |  214 calls/render  | **10 calls/render** |   95% Quieter    |
+| **512 Nodes**     | 1,038 calls/render | **10 calls/render** |  99.0% Quieter   |
 
-_Audit basis: static analysis of `ankusha.sh` source. Naive baseline = `14 + 2N`
+_Audit basis: static analysis of `ankusha-v1.sh` source. Naive baseline = `14 + 2N`
 calls (one `squeue` per node for state, one `sinfo` per node for metrics). ANKUSHA
 baseline = 10 fixed calls regardless of N. Relief = `(naive − 10) / naive × 100`._
 
 ---
 
-## The Avatar Selection (v1 Classic vs v2 Modern) 🎨
+## The Avatar Selection (v1 Mythical vs v2 Modern) 🎨
 
 A Mahout must choose the form of their Goad. Both Avatars share the same soul and
 identical logic.
 
-|                        | `ankusha.sh` — v1 Classic      | `ankusha2.sh` — v2 Modern        |
+|                        | `ankusha.sh` — v1 Mythical     | `ankusha2.sh` — v2 Modern        |
 | :--------------------- | :----------------------------- | :------------------------------- |
 | **Progress bars**      | `####....` ASCII fill          | `▓▓▓░░░` Unicode block elements  |
 | **Section borders**    | `────────` separator lines     | `┌────┐` box-drawing frames      |
