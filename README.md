@@ -22,9 +22,11 @@
 
 A zero-dependency, terminal-native HPC manifestation.
 
+A high-performance, safe Slurm monitoring dashboard. Pure Bash.
+
 Designed to tame any mammoth in the world at **O(1)** Silence.
 
-_No browser. No server. No Python. No pip. No modules. Just Bash._
+_**No browser. No server. No Python. No pip. No modules. Just Bash.**_
 
 </div>
 
@@ -61,6 +63,10 @@ It operates entirely at the **user level**—no admin rights, no daemon installa
 cluster configuration changes required. If you can whisper `squeue` to the scheduler, you
 can command ANKUSHA.
 
+* **Real-time GPU Tracking:** Monitor allocated vs. idle GPUs across your partition.
+* **Zero-Dependency:** Runs on any restricted cluster (No Python/Conda needed).
+* **Safe Monitoring:** Fixed call count ensures you never lag the `slurmctld` scheduler.
+
 ```text
 ANKUSHA The Goad of the Great White Elephant. v2.0
 ● User: researcher  ◈ Partition: gpu  ⊙ 20-04-2026 02:47 PM IST  [ LIVE 30s ]
@@ -81,13 +87,13 @@ ANKUSHA The Goad of the Great White Elephant. v2.0
 
 ## Glimpses of the Goad in Action 📸
 
-### v1 — The Classic Form (Maximum Compatibility)
+### v1 — Mythical - The Classic Form (Maximum Compatibility)
 
 > _Full dashboard snapshot — dark terminal, 160 columns_
 >
 > ![ANKUSHA v1 Snapshot](screenshots/v1-snapshot.png)
 
-### v2 — The Modern Visage (Unicode Box Drawing)
+### v2 — Modern - The Modern Manifestation (Unicode Box Drawing)
 
 > _Full dashboard — `┌────┐` borders, `▓▓▓░░░` bars, pill-style overview_
 >
