@@ -182,17 +182,29 @@ No `module load`. No internet connection. No installation.**
 ## Summoning the Goad 🚀
 
 ```bash
-# Clone the forge and summon the Goad immediately
+# Clone the forge
 git clone https://github.com/PSaiSurya/Ankusha.git
-cd ankusha && chmod +x ankusha.sh
-./ankusha.sh -p your_partition
+cd Ankusha
 
-# Or, place it on your sacred PATH for daily ritual
+# Grant power to the manifestations
+chmod +x scripts/*.sh
+
+# Summon the Modern Visage (v2) immediately
+./scripts/ankusha-v2.sh -p your_partition
+
+# --- OR: Place the Goad on your sacred PATH for daily ritual ---
+
+# 1. Create your local shrine of binaries (if it doesn't exist)
 mkdir -p ~/.local/bin
-cp ankusha.sh ~/.local/bin/ankusha
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 
-# The Goad now answers to your call. No pip. No conda. No further rites required.
+# 2. Copy your preferred version to the PATH
+cp scripts/ankusha-v2.sh ~/.local/bin/ankusha
+
+# 3. Ensure the shrine is recognized by your shell
+# (Only needed once; check your ~/.bashrc if unsure)
+export PATH="$HOME/.local/bin:$PATH"
+
+# The Goad now answers to your call from any pasture.
 ankusha --help
 ```
 
