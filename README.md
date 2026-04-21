@@ -28,6 +28,10 @@ Designed to tame any mammoth in the world at **O(1)** Silence.
 
 _**No browser. No server. No Python. No pip. No modules. Just Bash.**_
 
+
+_**Zero Privilege. No root. No sudo.
+A user-space Mahout for the HPC Mammoth.**_
+
 </div>
 
 ---
