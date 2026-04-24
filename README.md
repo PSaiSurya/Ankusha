@@ -374,7 +374,6 @@ Both Avatar forms (`ankusha-v1.sh` and `ankusha-v2.sh`) share identical security
 
 **The O(1) Principle**: While naive scripts burden the controller with a chaotic O(N) ritual, ANKUSHA remains unshakeable. It maintains a **strict 6-call discipline** (8 with optional tools), ensuring the Cloud Mammoth never feels the weight of its rider—no matter how many tusks (nodes) the beast possesses.
 
----
 ### The Anatomy of Every Render
 
 Every single render — snapshot or interactive frame — makes exactly **8 Slurm calls** (6 without optional tools). **This count is fixed.** It does not grow with cluster size.
@@ -400,10 +399,8 @@ Every single render — snapshot or interactive frame — makes exactly **8 Slur
 - **Zero redundant queries**: `draw_quick_stats` and `draw_nodes_section` **both reuse** `NODE_INFO_CACHE` — no duplicate `sinfo` calls
 - **GPU totals from cache**: Computed directly from `NODE_CACHE` (already in memory from `load_node_cache`)
 - **Pending job reuse**: Data fetched once in `draw_quick_stats`, reused in `draw_queue_section`
-- **Wait time calculation**: Computed client-side using local `date` commands — **zero additional Slurm calls**
+- **Wait time calculation**: Computed client-side using local `date` commands — **zero additional Slurm calls**. Shows full duration (e.g., `380d 11h 17m`)
 - **Graceful degradation**: `sacct` and `sprio` are optional; if unavailable, total drops to 6 calls
-
----
 
 ### Evolution: v1.0/v2.0 → v1.1/v2.1
 
