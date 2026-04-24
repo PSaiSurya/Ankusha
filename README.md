@@ -370,70 +370,105 @@ shellcheck ankusha-v1.sh ankusha-v2.sh
 Both Avatar forms (`ankusha-v1.sh` and `ankusha-v2.sh`) share identical security properties — only their visual presentation differs. Verify the integrity of the manifestation by comparing the scripts against the `SHA256SUMS` provided in the latest release.
 
 ---
-
 ## The Vedic Mathematics of O(1) Silence 📊
 
-> **The O(1) Principle:** While naive scripts burden the controller with a chaotic `O(N)`
-> ritual, ANKUSHA remains unshakeable. It maintains a strict **10-call discipline**,
-> ensuring the Cloud Mammoth never feels the weight of its rider—no matter how many tusks
-> (nodes) the beast possesses.
+**The O(1) Principle**: While naive scripts burden the controller with a chaotic O(N) ritual, ANKUSHA remains unshakeable. It maintains a **strict 6-call discipline** (8 with optional tools), ensuring the Cloud Mammoth never feels the weight of its rider—no matter how many tusks (nodes) the beast possesses.
 
+---
 ### The Anatomy of Every Render
 
-Every single render — snapshot or interactive frame — makes exactly the following Slurm
-calls. This count is fixed. It does not grow with cluster size.
+Every single render — snapshot or interactive frame — makes exactly **8 Slurm calls** (6 without optional tools). **This count is fixed.** It does not grow with cluster size.
 
-| Section                    | Slurm Tool | Purpose                                   | Calls  |
-| :------------------------- | :--------- | :---------------------------------------- | :----: |
-| `load_node_cache`          | `sinfo`    | Get node list for partition               |   1    |
-| `load_node_cache`          | `scontrol` | Bulk-fetch all node metrics in one RPC    |   1    |
-| `draw_quick_stats`         | `sinfo`    | Count node states (idle/alloc/mix/down)   |   1    |
-| `draw_quick_stats`         | `squeue`   | Count + GPU usage for running jobs        |   1    |
-| `draw_quick_stats`         | `squeue`   | Detailed pending jobs (count derived)     |   1    |
-| `draw_nodes_section`       | `sinfo`    | Stream node list with state for rendering |   1    |
-| `draw_jobs_section`        | `squeue`   | Fetch all active jobs in one call         |   1    |
-| `draw_recent_jobs_section` | `sacct`    | Fetch last 7 days of completed jobs       |   1    |
-| `draw_queue_section`       | `sprio`    | Fetch priority scores for pending jobs    |   1    |
-| **Total**                  |            |                                           | **10** |
+| **Section** | **Slurm Tool** | **Purpose** | **Calls** |
+|-------------|----------------|-------------|-----------|
+| `validate_partition` | `scontrol` | Cluster health check (`scontrol ping`) | 1 |
+| `load_node_cache` | `sinfo` | Fetch all node data with full format **once** | 1 |
+| `load_node_cache` | `scontrol` | Bulk-fetch detailed node metrics in one RPC | 1 |
+| `draw_quick_stats` | `squeue` | Running jobs + GPU usage | 1 |
+| `draw_quick_stats` | `squeue` | Pending jobs with submit time (for wait calculation) | 1 |
+| `draw_nodes_section` | — | *(reuses cached `NODE_INFO_CACHE`)* | 0 |
+| `draw_jobs_section` | `squeue` | All active jobs for user in one call | 1 |
+| `draw_recent_jobs_section` | `sacct` | Last 7 days of completed jobs | 1 |
+| `draw_queue_section` | `sprio` | Priority scores for pending jobs | 1 |
+| **TOTAL** | | | **8** |
 
-> GPU totals in `draw_quick_stats` are computed directly from `NODE_CACHE` (already in
-> memory from `load_node_cache`) — no additional Slurm call required.
->
-> Pending job data is fetched once in `draw_quick_stats` and reused in `draw_queue_section`
-> — no duplicate queries.
->
-> `sacct` and `sprio` are optional. If unavailable, those sections degrade gracefully
-> and their calls are skipped, reducing the total to **8 calls per render**.
+**Minimum configuration** (without `sacct`/`sprio`): **6 calls**
 
-### Karmic Relief: The Impact of O(1) Discipline
+#### Key Optimizations
 
-| Cluster Magnitude | The Naive Clamour  | The ANKUSHA Silence | Scheduler Relief |
-| :---------------- | :----------------: | :-----------------: | :--------------: |
-| **10 Nodes**      |  34 calls/render   | **10 calls/render** |   71% Quieter    |
-| **50 Nodes**      |  114 calls/render  | **10 calls/render** |   91% Quieter    |
-| **100 Nodes**     |  214 calls/render  | **10 calls/render** |   95% Quieter    |
-| **512 Nodes**     | 1,038 calls/render | **10 calls/render** |  99.0% Quieter   |
-
-_Audit basis: static analysis of `ankusha-v1.sh` source. Naive baseline = `14 + 2N`
-calls (one `squeue` per node for state, one `sinfo` per node for metrics). ANKUSHA
-baseline = 10 fixed calls regardless of N. Relief = `(naive − 10) / naive × 100`._
+- **Single `sinfo` fetch**: `load_node_cache` retrieves full node data (`%n|%t|%C|%m|%G`) in one call, stored in `NODE_INFO_CACHE`
+- **Zero redundant queries**: `draw_quick_stats` and `draw_nodes_section` **both reuse** `NODE_INFO_CACHE` — no duplicate `sinfo` calls
+- **GPU totals from cache**: Computed directly from `NODE_CACHE` (already in memory from `load_node_cache`)
+- **Pending job reuse**: Data fetched once in `draw_quick_stats`, reused in `draw_queue_section`
+- **Wait time calculation**: Computed client-side using local `date` commands — **zero additional Slurm calls**
+- **Graceful degradation**: `sacct` and `sprio` are optional; if unavailable, total drops to 6 calls
 
 ---
 
-## The Avatar Selection (v1 Mythical vs v2 Modern) 🎨
+### Evolution: v1.0/v2.0 → v1.1/v2.1
 
-A Mahout must choose the form of their Goad. Both Avatars share the same soul and
-identical logic.
+| **Metric** | **v1.0 / v2.0** | **v1.1 / v2.1** | **Improvement** |
+|------------|-----------------|-----------------|-----------------|
+| **Calls per render** | 10 | 8 | **-20%** |
+| **Minimum calls (no sacct/sprio)** | 8 | 6 | **-25%** |
+| **Redundant `sinfo` calls** | 2 | 0 | Eliminated |
+| **Priority display bug** | ❌ Always shows 0 | ✅ Fixed (`%.15Y` format) | Critical fix |
+| **Wait time display** | ❌ Always shows 0 | ✅ Accurate (from submit time) | Critical fix |
+| **Cache efficiency** | Partial | Full reuse | 100% cache hits |
 
-|                        | `ankusha.sh` — v1 Mythical     | `ankusha2.sh` — v2 Modern        |
-| :--------------------- | :----------------------------- | :------------------------------- |
-| **Progress bars**      | `####....` ASCII fill          | `▓▓▓░░░` Unicode block elements  |
-| **Section borders**    | `────────` separator lines     | `┌────┐` box-drawing frames      |
-| **Best for**           | PuTTY, TTY, xterm, MobaXterm  | iTerm2, Windows Terminal, Kitty  |
-| **Slurm Call Count**   | **10 per render**              | **10 per render**                |
-| **Signal Safety**      | Top-level trap, sleep tracked  | Top-level trap, sleep tracked    |
+**What changed:**
+- **Cache optimization**: Single `sinfo` call cached in `NODE_INFO_CACHE`, reused across all sections
+- **sprio fix**: Changed format code from `%.15y` (Nice) to `%.15Y` (Priority)
+- **Wait time fix**: Changed from `%M` (time used, always 0 for pending) to `%V` (submit time), calculate elapsed locally
+
+---
+
+### Karmic Relief: The Impact of O(1) Discipline
+
+| **Cluster Magnitude** | **Naive Approach** | **ANKUSHA v1.1/v2.1** | **Scheduler Relief** |
+|-----------------------|--------------------|-----------------------|----------------------|
+| 10 Nodes              | 34 calls/render    | 8 calls/render        | **76% Quieter** |
+| 50 Nodes              | 114 calls/render   | 8 calls/render        | **93% Quieter** |
+| 100 Nodes             | 214 calls/render   | 8 calls/render        | **96% Quieter** |
+| 512 Nodes             | 1,038 calls/render | 8 calls/render        | **99.2% Quieter** |
+
+**Audit basis**: Static analysis of `ankusha` v1.1/v2.1 source code.  
+**Naive baseline** = 14 + 2N calls (one `squeue` per node for state, one `sinfo` per node for metrics).  
+**ANKUSHA baseline** = 8 fixed calls regardless of N.  
+**Relief** = (naive − 8) / naive × 100.
+
+#### Real-World Impact
+
+On a 500-node cluster with 30-second refresh intervals:
+
+| **Version** | **Calls/Render** | **RPCs/Hour** | **Daily Load** |
+|-------------|------------------|---------------|----------------|
+| Naive Script | 1,014 | 121,680 | **2.9 million** |
+| ANKUSHA v1.0/v2.0 | 10 | 1,200 | 28,800 |
+| **ANKUSHA v1.1/v2.1** | **8** | **960** | **23,040** |
+| **Improvement** | — | **-20%** vs v1.0 | **99.2%** vs naive |
+
+**Controller impact**: ANKUSHA reduces scheduler load by over **99%** on large clusters while maintaining real-time accuracy.
+
+---
+
+### The Avatar Selection (v1 Mythical vs v2 Modern) 🎨
+
+A Mahout must choose the form of their Goad. Both Avatars share the **same soul and identical logic**.
+
+|  | **ankusha.sh — v1.1 Mythical** | **ankusha2.sh — v2.1 Modern** |
+|---|--------------------------------|-------------------------------|
+| **Progress bars** | `####....` ASCII fill | `▓▓▓░░░` Unicode block elements |
+| **Section borders** | `────────` separator lines | `┌────┐` box-drawing frames |
+| **Best for** | PuTTY, TTY, xterm, MobaXterm, legacy SSH | iTerm2, Windows Terminal, Kitty, Alacritty |
+| **Slurm Call Count** | **8 calls/render** (6 minimum) | **8 calls/render** (6 minimum) |
+| **Wait Time Calculation** | Client-side (local `date`) | Client-side (local `date`) |
+| **Signal Safety** | Top-level trap, sleep tracked | Top-level trap, sleep tracked |
 | **Partition Validation** | `scontrol ping` + partition check | `scontrol ping` + partition check |
+| **Cache Strategy** | `NODE_INFO_CACHE` + `NODE_CACHE` | `NODE_INFO_CACHE` + `NODE_CACHE` |
+| **Unicode Support** | ❌ ASCII-only (max compatibility) | ✅ UTF-8 box-drawing |
 
+**Both versions are actively maintained.** Choose based on your terminal capabilities, not performance—they are **functionally identical** under the hood.
 ---
 
 ## The Origin Story: The Churning of the Silicon Ocean 🐘
